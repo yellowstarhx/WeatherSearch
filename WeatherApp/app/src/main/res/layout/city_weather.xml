@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    tools:context=".activities.MainActivity"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardToday"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_margin="10dp"
+        app:cardBackgroundColor="@color/dimGray"
+        card_view:cardCornerRadius="15dp"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:clickable="true" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@android:color/transparent">
+
+                <ImageView
+                    android:id="@+id/summaryIcon"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="10dp"
+                    android:background="@android:color/transparent"
+                    app:srcCompat="@drawable/weather_partly_snowy_rainy" />
+
+                <TextView
+                    android:id="@+id/summaryTemperature"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/summaryIcon"
+                    android:background="@android:color/transparent"
+                    android:text="@string/initialTemperature"
+                    android:textColor="@android:color/white"
+                    android:textSize="40dp" />
+
+                <TextView
+                    android:id="@+id/summaryWeather"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/summaryTemperature"
+                    android:layout_alignLeft="@+id/summaryTemperature"
+                    android:layout_marginTop="5dp"
+                    android:background="@android:color/transparent"
+                    android:maxLength="16"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:singleLine="false"
+                    android:text="@string/initialWeather"
+                    android:textColor="@color/lightGray"
+                    android:textSize="18dp" />
+
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/summaryCity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="10dp"
+                android:background="@android:color/transparent"
+                android:text="@string/initialCity"
+                android:textColor="@android:color/white"
+                android:textSize="18dp" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:background="@android:color/transparent"
+                card_view:srcCompat="@drawable/information_outline" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardSummary"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:layout_margin="10dp"
+        app:cardBackgroundColor="@color/dimGray"
+        card_view:cardCornerRadius="15dp" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:background="@android:color/transparent" >
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/humidity"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                app:cardBackgroundColor="@android:color/transparent">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/humidityImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@android:color/transparent"
+                        app:srcCompat="@drawable/water_percent" />
+
+                    <TextView
+                        android:id="@+id/humidityData"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/humidityImage"
+                        android:background="@android:color/transparent"
+                        android:gravity="center"
+                        android:text="@string/initialHumidity"
+                        android:textColor="@color/white"
+                        android:textSize="18dp" />
+
+                    <TextView
+                        android:id="@+id/humidityLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="10dp"
+                        android:background="@android:color/transparent"
+                        android:gravity="center"
+                        android:text="Humidity"
+                        android:textColor="@color/lightGray"
+                        android:textSize="14dp" />
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/windSpeed"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                app:cardBackgroundColor="@android:color/transparent">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/windSpeedImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@android:color/transparent"
+                        app:srcCompat="@drawable/weather_windy" />
+
+                    <TextView
+                        android:id="@+id/windSpeedData"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/windSpeedImage"
+                        android:background="@android:color/transparent"
+                        android:gravity="center"
+                        android:text="@string/initialWindSpeed"
+                        android:textColor="@color/white"
+                        android:textSize="18dp" />
+
+                    <TextView
+                        android:id="@+id/windSpeedLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="10dp"
+                        android:background="@android:color/transparent"
+                        android:gravity="center"
+                        android:text="@string/windSpeedLabel"
+                        android:textColor="@color/lightGray"
+                        android:textSize="14dp" />
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/visibility"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                app:cardBackgroundColor="@android:color/transparent">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/visibilityImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@android:color/transparent"
+                        app:srcCompat="@drawable/eye_outline" />
+
+                    <TextView
+                        android:id="@+id/visibilityData"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/visibilityImage"
+                        android:background="@android:color/transparent"
+                        android:gravity="center"
+                        android:text="@string/initialVisibility"
+                        android:textColor="@color/white"
+                        android:textSize="18dp" />
+
+                    <TextView
+                        android:id="@+id/visibilityLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="10dp"
+                        android:background="@android:color/transparent"
+                        android:gravity="center"
+                        android:text="@string/visibilityLabel"
+                        android:textColor="@color/lightGray"
+                        android:textSize="14dp" />
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/pressure"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                app:cardBackgroundColor="@android:color/transparent">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/pressureImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@android:color/transparent"
+                        app:srcCompat="@drawable/gauge" />
+
+                    <TextView
+                        android:id="@+id/pressureData"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/pressureImage"
+                        android:background="@android:color/transparent"
+                        android:gravity="center"
+                        android:text="@string/initialPressure"
+                        android:textColor="@color/white"
+                        android:textSize="18dp" />
+
+                    <TextView
+                        android:id="@+id/pressureLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="10dp"
+                        android:background="@android:color/transparent"
+                        android:gravity="center"
+                        android:text="@string/pressureLabel"
+                        android:textColor="@color/lightGray"
+                        android:textSize="14dp" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:background="@color/dimGray"
+        card_view:cardCornerRadius="15dp"
+        app:cardBackgroundColor="@android:color/darker_gray">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/nextWeek"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent">
+
+        </androidx.recyclerview.widget.RecyclerView>
+    </androidx.cardview.widget.CardView>
+
+
+</LinearLayout>

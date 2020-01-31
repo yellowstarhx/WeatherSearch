@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">WeatherApp</string>
+    <string name="initialTemperature">--°F</string>
+    <string name="initialWeather">Looks Great</string>
+    <string name="initialCity">Somewhere on Earth</string>
+    <string name="initialHumidity">--%</string>
+    <string name="initialWindSpeed">--.-- mph</string>
+    <string name="initialVisibility">-.— km</string>
+    <string name="initialPressure">----.-- mb</string>
+    <string name="temperatureLabel">Temperature</string>
+    <string name="humidityLabel">Humidity</string>
+    <string name="windSpeedLabel">Wind Speed</string>
+    <string name="visibilityLabel">Visibility</string>
+    <string name="pressureLabel">Pressure</string>
+    <string name="searchBarTitle">Search</string>
+    <string name="searchBarHint">Search a new city</string>
+    <string name="NA">NA</string>
+    <string name="initialPrecipitation">-.-- mmph</string>
+    <string name="precipitationLabel">Precipitation</string>
+    <string name="initialCloudCover">- %</string>
+    <string name="cloudCoverLabel">Cloud Cover</string>
+    <string name="initialOzone">---.-- DU</string>
+    <string name="ozoneLabel">Ozone</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
